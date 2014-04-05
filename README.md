@@ -19,3 +19,5 @@ GET		/api/options
 ##Setup
 [1] To import seed data into mongodb:
 $mongo localhost:27017/demo schema.js
+
+git remote set-url origin git@github.com:vollov/demo-sever.git
