@@ -10,6 +10,13 @@ GET		/api/postcodes/:segment		(50 records per segment)
 GET		/api/setting/1
 GET		/api/postcode/:id
 GET		/api/options
+
+DEL		/api/users/:id
+PUT		/api/users/:id
+POST	/api/users/
+GET		/api/users
+GET		/api/users/:id
+
 [
 	{name: 'entry1', value: 0},
 	{name: 'entry2', value: 1},

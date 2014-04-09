@@ -46,6 +46,7 @@ module.exports = function(app) {
 	 */
 	app.put('/api/users/:id', function(req, res){
 		var id = req.params.id;
+		delete req.body['_id'];
 		db.update('user',  {'_id': mongojs.ObjectId(id)}, {$set: req.body},
 			{upsert: false, multi:false}, function(){res.send(200,req.body);
 		});
@@ -56,7 +57,7 @@ module.exports = function(app) {
 	 */
 	app.delete('/api/users/:id', function(req, res){
 		var id = req.params.id;
-		db.remove('user', {'_id': mongojs.ObjectId(id)}, function(err, message){
+		db.remove('user', {'_id': mongojs.ObjectId(id)}, false, function(err, message){
 			if (!err) {
 				res.json(true);
 			} else {

@@ -4,7 +4,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"start": "demo.server.5099.js"
+		"start": "supervisor demo.server.5099.js",
+		"test": "mocha --ui bdd -R spec test/*.js"
 	},
 	"dependencies": {
 		"express": "3.0.0",
